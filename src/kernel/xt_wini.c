@@ -126,7 +126,7 @@ FORWARD _PROTOTYPE( int w_1rdwt, (int opcode, unsigned long block,
 FORWARD _PROTOTYPE( int win_results, (void) );
 FORWARD _PROTOTYPE( void win_out, (int val) );
 FORWARD _PROTOTYPE( int w_reset, (void) );
-FORWARD _PROTOTYPE( int w_handler, (irq_hook_t hook) );
+FORWARD _PROTOTYPE( int w_handler, (irq_hook_t *hook) );
 FORWARD _PROTOTYPE( int win_specify, (int drive) );
 FORWARD _PROTOTYPE( int check_init, (void) );
 FORWARD _PROTOTYPE( int read_ecc, (void) );
