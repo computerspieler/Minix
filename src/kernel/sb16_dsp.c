@@ -249,6 +249,7 @@ message *m_ptr;
 PRIVATE int dsp_init()
 {
   int i;
+  irq_hook_t dsp_hook;
 
   if (dsp_reset () != OK) 
   { 
@@ -287,8 +288,8 @@ PRIVATE int dsp_init()
   mixer_set(MIXER_SET_DMA, (1 << SB_DMA_8 | 1 << SB_DMA_16)); 
 
   /* register interrupt vector and enable irq */
-  put_irq_handler(SB_IRQ, dsp_handler);
-  enable_irq(SB_IRQ);
+  put_irq_handler(&dsp_hook, SB_IRQ, dsp_handler);
+  enable_irq(&dsp_hook);
 
   DspAvail = 1;
   return OK;
@@ -298,12 +299,12 @@ PRIVATE int dsp_init()
 /*=========================================================================*
  *				dsp_handler				   *
  *=========================================================================*/
-PRIVATE int dsp_handler(irq)
-int irq;
+PRIVATE int dsp_handler(hook)
+irq_hook_t *hook;
 {
 
 #if SB_DEBUG2
-  printf("SoundBlaster interrupt %d\n", irq);
+  printf("SoundBlaster interrupt %d\n", hook->irq);
 #endif 
 
   if (DmaDone)     /* Dma transfer is done */
