@@ -1,7 +1,7 @@
 #!/bin/sh
 
 sudo ./copy.sh
-qemu-system-x86_64 -m 128 \
+qemu-system-x86_64 -m 128M \
 	-serial stdio \
 	-k en-us \
 	-drive file=minix.raw,media=disk,format=raw,if=ide,index=0,cache=writeback \

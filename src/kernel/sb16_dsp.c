@@ -35,7 +35,7 @@
 /* prototypes */
 FORWARD _PROTOTYPE( void init_buffer, (void));
 FORWARD _PROTOTYPE( int dsp_init, (void)); 
-FORWARD _PROTOTYPE( int dsp_handler, (int irq));
+FORWARD _PROTOTYPE( int dsp_handler, (irq_hook_t *hook));
 FORWARD _PROTOTYPE( int dsp_open, (message *m_ptr));
 FORWARD _PROTOTYPE( int dsp_close, (message *m_ptr));
 FORWARD _PROTOTYPE( int dsp_ioctl, (message *m_ptr));
