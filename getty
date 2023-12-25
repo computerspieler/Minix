@@ -1,0 +1,15 @@
+#!/bin/sh
+# This script's purpose is just to
+# automatically compile the kernel
+cd /usr/src
+make libraries
+make world
+make install
+
+cd /usr/src/tools
+make hdboot
+
+echo It's done !
+echo Please run the command "menu"
+echo once the system is halted
+halt
