@@ -191,9 +191,24 @@ ALL	= \
 	write \
 	xargs \
 	yes \
+	nothing \
+	hello_world \
+	one_char
 	#
 
 all:	$(ALL)
+
+nothing:	nothing.c
+	$(CCLD) -o $@ nothing.c
+	install -S 4kw $@
+
+hello_world:	hello_world.c
+	$(CCLD) -o $@ hello_world.c
+	install -S 4kw $@
+
+one_char:	one_char.c
+	$(CCLD) -o $@ one_char.c
+	install -S 4kw $@
 
 add_route:	add_route.c
 	$(CCLD) -o $@ add_route.c
@@ -990,6 +1005,9 @@ install:	\
 	/bin/pwd \
 	/bin/sync \
 	/bin/umount \
+	/bin/nothing \
+	/bin/hello_world \
+	/bin/one_char
 	#
 
 /usr/bin/add_route:	add_route
@@ -1494,6 +1512,15 @@ install:	\
 /usr/bin/yes:	yes
 	install -cs -o bin $? $@
 
+/usr/bin/nothing:	nothing
+	install -cs -o bin $? $@
+
+/usr/bin/hello_world:	hello_world
+	install -cs -o bin $? $@
+
+/usr/bin/one_char:	one_char
+	install -cs -o bin $? $@
+
 /bin/cat:	/usr/bin/cat
 	install -lcs $? $@
 
@@ -1519,6 +1546,15 @@ install:	\
 	install -lcs $? $@
 
 /bin/umount:	/usr/bin/umount
+	install -lcs $? $@
+
+/bin/nothing:	/usr/bin/nothing
+	install -lcs $? $@
+
+/bin/hello_world:	/usr/bin/hello_world
+	install -lcs $? $@
+
+/bin/one_char:	/usr/bin/one_char
 	install -lcs $? $@
 
 clean:
