@@ -61,7 +61,7 @@
 
 #if (CHIP == SPARC) || (CHIP == M68000)
 #define CLICK_SIZE	4096	/* unit in which memory is alocated */
-#define CLICK_SHIFT	  12	/* 2log of CLICK_SIZE */
+#define CLICK_SHIFT	  12	/* log2 of CLICK_SIZE */
 #endif
 
 #define ABS             -999	/* this process means absolute memory */

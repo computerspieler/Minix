@@ -353,7 +353,7 @@ push_current_stack:
 ! This is real mode version. Alternate (_p_s_call) will be used in
 ! protected mode
 
-_s_call:			! System calls are vectored here.
+_s_call:		! System calls are vectored here.
 				! Do save routine inline for speed,
 				! but do not save ax, bx, cx, dx,
 				! since C does not require preservation,

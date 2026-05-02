@@ -48,7 +48,7 @@
 #endif
 
 /* Defines for kernel configuration. */
-#define AUTO_BIOS          0	/* xt_wini.c - use Western's autoconfig BIOS */
+#define AUTO_BIOS          1	/* xt_wini.c - use Western's autoconfig BIOS */
 #define LINEWRAP           1	/* console.c - wrap lines at column 80 */
 #define ALLOW_GAP_MESSAGES 1	/* proc.c - allow messages in the gap between
 				 * the end of bss and lowest stack address */
@@ -66,36 +66,36 @@
 #define ENABLE_AT_WINI     1	/* enable AT winchester driver */
 #define   ENABLE_ATAPI     1	/*   add ATAPI support to AT driver */
 #define ENABLE_BIOS_WINI   1	/* enable BIOS winchester driver */
-#define ENABLE_ESDI_WINI   0	/* enable ESDI winchester driver */
-#define ENABLE_XT_WINI     0	/* enable XT winchester driver */
-#define ENABLE_AHA1540_SCSI 0	/* enable Adaptec 1540 SCSI driver */
+#define ENABLE_ESDI_WINI   1	/* enable ESDI winchester driver */
+#define ENABLE_XT_WINI     1	/* enable XT winchester driver */
+#define ENABLE_AHA1540_SCSI 1	/* enable Adaptec 1540 SCSI driver */
 #define ENABLE_FATFILE     1	/* enable FAT file virtual disk driver */
 #define ENABLE_DOSFILE     1	/* enable DOS file virtual disk driver */
-#define ENABLE_SB16        0	/* enable Soundblaster audio driver */
-#define ENABLE_PRINTER     0	/* enable printer driver */
-#define ENABLE_USERBIOS    0	/* enable user mode BIOS calls */
-#define ENABLE_PCI	   0	/* enable PCI device recognition */
+#define ENABLE_SB16        1	/* enable Soundblaster audio driver */
+#define ENABLE_PRINTER     1	/* enable printer driver */
+#define ENABLE_USERBIOS    1	/* enable user mode BIOS calls */
+#define ENABLE_PCI	  	   1	/* enable PCI device recognition */
 
 /* DMA_SECTORS may be increased to speed up DMA based drivers. */
 #define DMA_SECTORS        1	/* DMA buffer size (must be >= 1) */
 
 /* Enable or disable networking drivers. */
-#define ENABLE_DP8390	 0	/* enable DP8390 ethernet driver */
-#define   ENABLE_WDETH     1	/*   add Western Digital WD80x3 */
-#define   ENABLE_NE2000    1	/*   add Novell NE1000/NE2000 */
-#define   ENABLE_3C503     1	/*   add 3Com Etherlink II (3c503) */
-#define ENABLE_RTL8139	 0	/* enable Realtek 8139 (rtl8139) */
+#define ENABLE_DP8390	 1	/* enable DP8390 ethernet driver */
+#define ENABLE_WDETH     1	/*   add Western Digital WD80x3 */
+#define ENABLE_NE2000    1	/*   add Novell NE1000/NE2000 */
+#define ENABLE_3C503     1	/*   add 3Com Etherlink II (3c503) */
+#define ENABLE_RTL8139	 1	/* enable Realtek 8139 (rtl8139) */
 
 /* Include or exclude backwards compatibility code. */
-#define ENABLE_BINCOMPAT   0	/* for binaries using obsolete calls */
-#define ENABLE_SRCCOMPAT   0	/* for sources using obsolete calls */
+#define ENABLE_BINCOMPAT   1	/* for binaries using obsolete calls */
+#define ENABLE_SRCCOMPAT   1	/* for sources using obsolete calls */
 
 /* NR_CONS, NR_RS_LINES, and NR_PTYS determine the number of terminals the
  * system can handle.
  */
-#define NR_CONS            2	/* # system consoles (1 to 8) */
-#define	NR_RS_LINES	   0	/* # rs232 terminals (0 to 4) */
-#define	NR_PTYS		   0	/* # pseudo terminals (0 to 64) */
+#define NR_CONS        2	/* # system consoles (1 to 8) */
+#define	NR_RS_LINES	   1	/* # rs232 terminals (0 to 4) */
+#define	NR_PTYS		   8	/* # pseudo terminals (0 to 64) */
 
 
 /*===========================================================================*

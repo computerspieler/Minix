@@ -267,7 +267,7 @@ message *mp;
 /*===========================================================================*
  *				nop_prepare				     *
  *===========================================================================*/
-PUBLIC struct device *nop_prepare(device)
+PUBLIC struct device *nop_prepare(int device)
 {
 /* Nothing to prepare for. */
   return(NIL_DEV);
