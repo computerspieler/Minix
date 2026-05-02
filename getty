@@ -1,11 +1,16 @@
 #!/bin/sh
 # This script's purpose is just to
 # automatically compile the kernel
-rm /minix/*
-
-cd /usr/src
-make world
+rm -rf /minix/*
 
 cd /usr/src/tools
 make hdboot
+
+cd /usr/src
+make libraries
+make all
+make install
+
+cp /usr/bin/getty.old /usr/bin/getty
+
 halt

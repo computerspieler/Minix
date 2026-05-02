@@ -1,6 +1,7 @@
 #!/bin/sh
 
 sudo ./copy.sh
+sudo chmod +666 minix.raw
 qemu-system-x86_64 -m 128M \
 	-serial stdio \
 	-k en-us \
