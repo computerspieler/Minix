@@ -3,6 +3,12 @@
 # automatically compile the kernel
 rm -rf /minix/*
 
+if [ `tty` != /dev/console ]
+then 
+    echo "Wrong terminal, exiting"
+    exit 0
+fi
+
 cd /usr/src/tools
 make hdboot
 
