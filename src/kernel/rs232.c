@@ -503,7 +503,7 @@ tty_t *tp;			/* which TTY */
 #endif
 
   /* Associate RS232 and TTY structures. */
-  line = tp - &tty_table[NR_CONS];
+  line = tp - &tty_table[0];
   rs = tp->tty_priv = &rs_lines[line];
   rs->tty = tp;
 

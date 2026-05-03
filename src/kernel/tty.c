@@ -1293,11 +1293,10 @@ tty_t *tp;			/* TTY line to initialize. */
   tp->tty_termios = termios_defaults;
   tp->tty_icancel = tp->tty_ocancel = tp->tty_ioctl = tp->tty_close =
 								tty_devnop;
-  if (tp < tty_addr(NR_CONS)) {
-	scr_init(tp);
-  } else
-  if (tp < tty_addr(NR_CONS+NR_RS_LINES)) {
+  if (tp < tty_addr(NR_RS_LINES)) {
 	rs_init(tp);
+  } else if (tp < tty_addr(NR_CONS+NR_RS_LINES)) {
+	scr_init(tp);
   } else {
 	pty_init(tp);
   }

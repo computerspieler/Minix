@@ -761,7 +761,7 @@ tty_t *tp;
   unsigned page_size;
 
   /* Associate console and TTY. */
-  line = tp - &tty_table[0];
+  line = tp - &tty_table[NR_RS_LINES];
   if (line >= nr_cons) return;
   cons = &cons_table[line];
   cons->c_tty = tp;
